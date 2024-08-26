@@ -12,11 +12,11 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # test stage
-FROM base as test
+FROM python:3.12 as test
 RUN pytest
 
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
 # Run app.py when the container launches
-CMD ["python3", "app.py"]
+CMD ["python", "app.py"]
