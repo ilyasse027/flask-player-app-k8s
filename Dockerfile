@@ -11,8 +11,7 @@ COPY . .
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-# test stage
-FROM python as test
+# Run tests
 RUN pytest
 
 # Make port 5000 available to the world outside this container
